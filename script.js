@@ -28,13 +28,12 @@ function winner(win){
 
         document.getElementById('display').innerHTML = '! Player ' + win + ' Is Winner !';
         alert('! Player '+win+' Is Winner !\nPress Ok To Continue');
-        let winn=win;
-        reset(0,winn);
+        reset(0,win);
     }
     if(save[1]!=1 && save[2]!=2 && save[3]!=3 && save[4]!=4 && save[5]!=5 && save[6]!=6
         && save[7]!=7 && save[8]!=8 && save[9]!=9){
 
-            document.getElementById('display').innerHTML = '! DRAW !';
+            alert('! DRAW !\nPress Ok To Continue');
             reset(2,2);
         }
 }
