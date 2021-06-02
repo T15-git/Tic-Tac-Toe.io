@@ -1,107 +1,36 @@
-var i = 0;
-var save = [];
+var save = [0,1,2,3,4,5,6,7,8,9]
+turn = 1;
+function change(i){
+    if(save[i]!= i ) return;
 
-function AC(){
-    document.getElementById('text').value = '';
-    save = [];
-    i=0;
-}
-
-function letter(num){
-    document.getElementById('text').value += num;
-    if(save[i]==null) save[i] = num; else save[i] += num;
-}
-function back(){
-    if(save[i]==null || save[i]=='') return;
-    if(i==0) save[0]=document.getElementById('text').value;
-
-    save[i] = cutlast(save[i]);
-    let str = document.getElementById('text').value;
-    str = cutlast(str);
-    document.getElementById('text').value = str;
-
-}
-
-function optr(op){
-    if((save[0]==null || save[0]=='') && op == '-'){
-        document.getElementById('text').value += op;
-        save[0]='-';
+    if (turn == 1){
+        document.getElementById(i).innerHTML = 'X';
+        save[i]='X';
+        winner(turn)
+        turn++;
+        document.getElementById('display').innerHTML = 'Player 2 Turn';
         return;
     }
-    if (save[0]=='' || save[0]== '-') return;
 
-    if(save[i]==null || save[i]==''){
-        let rep = document.getElementById('text').value
-        document.getElementById('text').value = rep.replaceAt(rep.length - 1, op);
-        op=checkop(op);
-        save[i-1]=op;
-        return;
-    }
-    let dot = checkdot(save[i])
-    if (save[i][save[i].length-1] =='.') return;
-    else{
-        document.getElementById('text').value += op;
-        op=checkop(op);
-        save[++i]=op;
-        i++;
-    }
+    document.getElementById(i).innerHTML = 'O';
+    save[i]='O';
+    winner(turn)
+    turn--;
+    document.getElementById('display').innerHTML = 'Player 1 Turn';
 }
 
-function dot(){
-    if (!save[i].includes(".") && save[i] != "") {
-        save[i] += ".";
-        document.getElementById('text').value += ".";
+function winner(win){
+    if(save[1]==save[2] && save[2]==save[3] || save[4]==save[5] && save[5]==save[6] ||
+       save[7]==save[8] && save[8]==save[9] || save[1]==save[4] && save[4]==save[7] ||
+       save[2]==save[5] && save[5]==save[8] || save[3]==save[6] && save[6]==save[9] ||
+       save[1]==save[5] && save[5]==save[9] || save[3]==save[5] && save[5]==save[7]){
+
+        document.getElementById('display').innerHTML = '! Player ' + win + ' Is Winner !';
+        alert('! Player '+win+' Is Winner !\nPress Ok To Continue');
     }
-}
+    if(save[1]!=1 && save[2]!=2 && save[3]!=3 && save[4]!=4 && save[5]!=5 && save[6]!=6
+        && save[7]!=7 && save[8]!=8 && save[9]!=9){
 
-function result(){
-    if((save[i]==null || save[i]=='') || save[i].charAt(save[i].length-1) == '.') return;
-
-    while(i!=0){
-        save[i-2]= calculate(save[i]=parseFloat(save[i]) , save[--i] , save[--i]=parseFloat(save[i]))
-        save = save.slice(0, save.length - 2);
-    }
-    document.getElementById('text').value = save[0];
-}
-
-function calculate(first,op,second) {
-    switch (op) {
-        case "+": return second + first;
-        case "-": if(first > second) return first - second; else return second - first;
-        case "*": return second * first;
-        case "/": return second / first;
-        case "%": return second % first;
-    }
-}
-
-function checkop(op){
-    if(op=='x') return '*';
-    else if(op=='÷') return '/';
-    else return op;
-}
-
-function checkdot(str){
-    str =str[str.length-1];
-    return str;
-}
-function cutlast(str){
-    let index = str.length-1;
-    let newstr='';
-    let i=0;
-
-    while(i!=index){
-        newstr+=str[i];
-        i++;
-    }
-return newstr;
-}
-
-String.prototype.replaceAt = function(index, replacement) {
-    if (index >= this.length) {
-        return this.valueOf();
-    }
- 
-    var chars = this.split('');
-    chars[index] = replacement;
-    return chars.join('');
+            document.getElementById('display').innerHTML = '! DRAW !';
+        }
 }

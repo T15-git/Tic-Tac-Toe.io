@@ -1,57 +1,66 @@
 @media (min-width: 280px) {
-  .container {
-    width: 75%;
+    .container {
+      width: 75%;
+    }
   }
-}
-
-@media (min-width: 576px) {
-  .container {
-    width: 50%;
+  
+  @media (min-width: 576px) {
+    .container {
+      width: 50%;
+    }
   }
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 50%;
+  
+  @media (min-width: 768px) {
+    .container {
+      width: 50%;
+    }
   }
-}
-
-@media (min-width: 992px) {
-  .container {
-    width: 50%;
+  
+  @media (min-width: 992px) {
+    .container {
+      width: 50%;
+    }
   }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    width: 25%;
+  
+  @media (min-width: 1200px) {
+    .container {
+      width: 25%;
+    }
   }
-}
-
-@media (min-width: 1400px) {
-  .container {
-    width: 25%;
+  
+  @media (min-width: 1400px) {
+    .container {
+      width: 25%;
+    }
   }
+body{
+    background-color: rgb(242, 246, 247);
 }
-.btn:focus {
-  box-shadow: none !important;
+.btn:focus{
+  box-shadow: none !important
 }
-
 .btn:hover {
   box-shadow: none !important;
 }
-
-.btn {
-  border-radius: 0;
+.btn{
+  border-top: hidden;
+    border-color: black;
+    border-radius: 0px;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(242, 246, 247);
+    place-items:center;
 }
-
-.main-style {
-  background-color: rgb(241, 241, 241);
-  border-radius: 8px;
-  border-style: solid;
-  border-color: rgb(216, 216, 216);
-  overflow: hidden;
+.down{
+  border-bottom: hidden;
 }
-body{
-  background:rgb(243, 235, 235);
+.left{
+  border-left: hidden;
+}
+.right{
+  border-right: hidden;
+}
+.center{
+  margin-left: -6px;
+  margin-right: -6px;
 }
