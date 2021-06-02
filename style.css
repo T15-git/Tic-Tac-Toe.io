@@ -1,45 +1,57 @@
 @media (min-width: 280px) {
-    .container {
-      width: 75%;
-    }
+  .container {
+    width: 75%;
   }
-  
-  @media (min-width: 576px) {
-    .container {
-      width: 50%;
-    }
-  }
-  
-  @media (min-width: 768px) {
-    .container {
-      width: 50%;
-    }
-  }
-  
-  @media (min-width: 992px) {
-    .container {
-      width: 50%;
-    }
-  }
-  
-  @media (min-width: 1200px) {
-    .container {
-      width: 25%;
-    }
-  }
-  
-  @media (min-width: 1400px) {
-    .container {
-      width: 25%;
-    }
-  }
-body{
-    background-color: rgb(242, 246, 247);
 }
-.btn{
-    border-radius: 5px;
-    width: 60px;
-    height: 60px;
-    background-color: rgb(242, 246, 247);
-    place-items:center;
+
+@media (min-width: 576px) {
+  .container {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 25%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    width: 25%;
+  }
+}
+.btn:focus {
+  box-shadow: none !important;
+}
+
+.btn:hover {
+  box-shadow: none !important;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.main-style {
+  background-color: rgb(241, 241, 241);
+  border-radius: 8px;
+  border-style: solid;
+  border-color: rgb(216, 216, 216);
+  overflow: hidden;
+}
+body{
+  background:rgb(243, 235, 235);
 }
