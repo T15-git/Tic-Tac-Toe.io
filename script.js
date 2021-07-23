@@ -46,12 +46,16 @@ function reset(choice){
     if(choice==0){
         document.getElementById('next').disabled = true;
         document.getElementById('next').style.backgroundColor = 'white';
-        Pturn(turn);
+        return Pturn(turn);
     }
 
     if(choice == 1){
         document.getElementById('score').innerHTML = 'Player1<0> Player2<0>';
         score = [0,0];
+        turn = 2;
+        Pturn(turn);
+        document.getElementById('next').disabled = true;
+        return document.getElementById('next').style.backgroundColor = 'white';
     }
 }
 
